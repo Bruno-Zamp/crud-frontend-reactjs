@@ -1,7 +1,8 @@
-function Box({ value }) { 
+function Box({ value, onClick }) { 
     const { musica, banda, genero, ano} = value;
     return (
         <div
+            className="App-item"
             style={{backgroundColor: '#202020', width:'15em', height:'15em', borderRadius: 20, margin: 20, justifyContent: 'center', alignContent: 'space-around', padding: 15}}
         >
             <div>
@@ -10,7 +11,11 @@ function Box({ value }) {
                 <p>Ano: {ano}</p>
                 <p>Gênero: {genero}</p>
             </div>
-            <button style={{ marginTop: 20 }}>remover</button>
+            <button
+                name="remove_button"
+                style={{ marginTop: 20 }}
+                onClick={() => onClick(musica, banda)}
+            >remover</button>
         </div>
     )
 } 
